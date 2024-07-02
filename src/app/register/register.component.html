@@ -1,0 +1,135 @@
+<div class="parent">
+  <div class="parent2 mt-3">
+    <div class="child1" data-aos="fade-right" data-aos-duration="1000">
+      <h1 class="ms-5 mt-5">Create Account</h1>
+      <p class="ms-5 mt-3 ps-1">Create account to stay in contact with your
+        caregivers</p>
+      <form [formGroup]="registerform" class="m-3 mt-3"
+        (ngSubmit)="registerUser(registerform)" data-aos="fade-up"
+        data-aos-duration="1000">
+
+        <div class="form-row d-flex justify-content-evenly">
+          <div class="form-group col-md-5">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"
+              formControlName="name"
+              placeholder="Name">
+            <div
+              *ngIf="registerform.get('name')?.errors &&registerform.get('name')?.touched">
+
+              <p class="alert text-danger alert-danger"
+                *ngIf="registerform.get('name')?.errors['required']">Name is
+                required </p>
+
+            </div>
+          </div>
+
+          <div class="form-group col-md-5">
+            <label for="gender">Gender</label>
+            <select id="gender" class="form-control" formControlName="gender">
+              <option selected>Choose...</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row d-flex mt-3">
+          <div class="form-group col-md-11 ms-4">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email"
+              formControlName="email" required
+              placeholder="Email">
+            <div
+              *ngIf="registerform.get('email')?.errors &&registerform.get('email')?.touched">
+
+              <p class="alert text-danger alert-danger"
+                *ngIf="registerform.get('email')?.errors['required']">email is
+                required </p>
+              <p class="alert text-danger alert-danger"
+                *ngIf="registerform.get('email')?.errors['email']">email should
+                be in email form </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row d-flex mt-3">
+          <div class="form-group col-md-11 ms-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password"
+              formControlName="password" required
+              placeholder="*********">
+            <div
+              *ngIf="registerform.get('password')?.errors &&registerform.get('password')?.touched">
+
+              <p class="alert text-danger alert-danger"
+                *ngIf="registerform.get('password')?.errors['required']">Password
+                is required </p>
+              <p class="alert text-danger alert-danger"
+                *ngIf="registerform.get('password')?.errors['pattern']">Password
+                should start with capital letter </p>
+              <p class="alert alert-danger  text-danger"
+                *ngIf="registerform.get('password')?.errors['minlength']">Password
+                length should be more
+                the 8 letters </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="form-row d-flex justify-content-evenly mt-3">
+          <div class="form-group col-md-5">
+            <label for="date_of_birth">Date of birth</label>
+            <input type="date" class="form-control" id="date_of_birth"
+              formControlName="date_of_birth"
+              placeholder="Email">
+
+          </div>
+          <div class="form-group col-md-5">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone"
+              formControlName="phone"
+              placeholder="0125489854">
+            <div class="alert alert-danger text-danger"
+              *ngIf="registerform.get('phone')?.errors &&registerform.get('phone')?.touched">
+              <p *ngIf="registerform.get('phone')?.errors['pattern']" class="text-danger">
+                Phone.No should be 11 digits starts with 01 </p>
+              <p *ngIf="registerform.get('phone')?.errors['required']" class="text-danger ">
+                Phone.No is required</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-row d-flex mt-3">
+          <div class="form-group col-md-11 ms-4">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" required
+              formControlName="address" required
+              placeholder="123, fourth st.">
+          </div>
+        </div>
+
+        <div class="alert alert-danger text-danger" *ngIf="errorMessage">
+          {{errorMessage}}
+        </div>
+
+        <button type="submit"
+          class="btn btn-primary ms-4 mt-4 mb-2 bg-white text-primary border-3 border-white"
+          [disabled]="registerform.invalid">Sign
+          up</button>
+      </form>
+    </div>
+
+    <div class="child2" data-aos="fade-left" data-aos-duration="1000">
+      <div class="d-flex ms-5 mt-5 ">
+        <h6 class="mt-3">Already a member ? </h6>
+        <a routerLink="/login" class="mt-2 ms-3"><button
+            class="btn btn-primary bg-transparent text-primary me-3 w-100 h-100">Login</button></a>
+
+      </div>
+      <div class="pic d-flex justify-content-center align-items-center"
+        data-aos="fade-up" data-aos-duration="1000">
+        <img src="../../assets/photos/hello.jpeg" alt class="w-100 h-50 ">
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<nav
+  class="navbar navbar-expand-lg nbar  p-0 text-white d-flex mt-3 border border-3 border-white position-absolute rounded-5   "
+  data-aos="zoom_in" data-aos-duration="2000">
+  <a class="navbar-brand ps-3" routerLink="/home"><img
+      class="navimg ms-2 border rounded-circle"
+      src="../../assets/photos/logo.jpg" alt></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse d-flex justify-content-center"
+    id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active home">
+        <a class="nav-link text-white ms-5 home" routerLink="/home"
+          *ngIf="isLoggedIn">Home <span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="/about"
+          *ngIf="isLoggedIn">About us </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link text-white" routerLink="/contacts"
+          *ngIf="isLoggedIn">Contacts</a>
+      </li>
+      <li class="nav-item mrgn">
+        <a class="nav-link text-white" routerLink="/profile"
+          *ngIf="isLoggedIn">Profile</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btns d-flex justify-content-end">
+    <a routerLink="/chat" class="nav-link text-white">
+      <i class="fa-solid fa-message fa-lg m-2 me-3 icon-link-hover"></i>
+    </a>
+    <li class="nav-item clearfix noticon dropdown w-100">
+      <a class="nav-link dropdown-toggle" href="#" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <i
+          class="fa-solid fa-bell fa-lg mt-2 me-3"></i>
+      </a>
+      <ul id="ulb" class="dropdown-menu me-5 ">
+        <div class="list-group">
+          <a  data-aos="fade-up" data-aos-duration="1000"
+            class="list-group-item list-group-item-action flex-column  ">
+            <div class="d-flex w-100 justify-content-end  " >
+              <small class="text-primary">15 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong> Kareem Ahmed </strong>mentioned you in a post </p>
+          </a>
+          <a data-aos="fade-up" data-aos-duration="1500"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end ">
+              <small class="text-primary">22 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Mohamed Ahmed</strong> Added a new post on his page </p>
+          </a>
+          <a data-aos="fade-up" data-aos-duration="2000"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end">
+              <small class="text-primary">35 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Khaled Ahmed </strong> Falled in the street Contact him   </p>
+
+          </a>
+          <a data-aos="fade-up" data-aos-duration="2500"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end">
+              <small class="text-primary">48 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Ahmed Elsayed</strong> Reposted a  post on his page </p>
+          </a>
+          <a data-aos="fade-up" data-aos-duration="3000"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end">
+              <small class="text-primary">53 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Kamal Soror</strong> Added a new post on his page </p>
+          </a>
+          <a data-aos="fade-up" data-aos-duration="2000"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end">
+              <small class="text-primary">35 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Khaled Ahmed </strong> Sent you a message . See Details ...   </p>
+
+          </a>
+          <a data-aos="fade-up" data-aos-duration="2000"
+            class="list-group-item list-group-item-action flex-column ">
+            <div class="d-flex w-100 justify-content-end">
+              <small class="text-primary">35 minutes ago  <i class="fa-solid fa-circle fa-sm ms-1 "></i></small>
+            </div>
+            <p class="mb-1 ms-2 pn"><strong>Fady Ahmed </strong> Falled in the street Contact him   </p>
+
+          </a>
+
+        </div>
+      </ul>
+    </li>
+
+    <a routerLink="/login"> <button
+        class="btn btn-primary bg-white text-primary me-3 mt-1 btn-sm "
+        *ngIf="!isLoggedIn">Login</button></a>
+    <a routerLink="/register"> <button
+        class="btn btn-primary bg-white text-primary me-3 mt-1 btn-sm"
+        *ngIf="!isLoggedIn">Register</button></a>
+    <a> <button class="btn btn-primary bg-white text-primary  me-4 mt-1 btn-sm"
+        (click)="loggedOut()" *ngIf="isLoggedIn">LogOut</button></a>
+
+  </div>
+
+
+</nav>
+
+<!-- <a class="nav-link text-white" routerLink="/notifications"><i
+  class="fa-solid fa-bell fa-lg m-2 me-4"></i></a> -->

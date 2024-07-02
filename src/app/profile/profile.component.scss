@@ -1,0 +1,70 @@
+.p{
+  background-color: rgb(219, 222, 235);
+
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+
+}
+.ovflow{
+  width: 100%;
+  height: 30%;
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+  background-image: url("../../assets/photos/hero2.jpg");
+}
+.parent{
+  width: 100%;
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+.c1{
+  width: 450px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+}
+.c2{
+  width: 550px;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+}
+.cc1{
+  width: 100%;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+.item
+{
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.typ{
+  width: 50%;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typ h2{
+  margin-left:25px ;
+margin-top: 60px;
+  color: rgb(58, 58, 184);
+}
+.cc2{
+  width: 71%;
+  border-radius: 25px;
+  border: solid blue 2px;
+  height: 50%;
+  margin-left: 50px;
+  background-color: rgb(255, 255, 255);
+}
+.info{
+  margin-top: 100px;
+}

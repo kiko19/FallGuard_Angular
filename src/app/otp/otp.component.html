@@ -1,0 +1,61 @@
+<div class="parent ">
+  <div class="child1" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="m-5">Email Verification</h2>
+    <form class="m-3 mt-3" (ngSubmit)="checkUser(checkform)" [formGroup]="checkform"
+      data-aos="fade-up" data-aos-duration="1000" >
+
+      <div class="form-row  mt-3">
+        <div class="form-group col-md-11 ms-4">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email"
+            formControlName="email" required
+            placeholder="Email">
+          <div
+            *ngIf="checkform.get('email')?.errors &&checkform.get('email')?.touched">
+
+            <p class="alert text-danger alert-danger"
+              *ngIf="checkform.get('email')?.errors['required']">Email is
+              required </p>
+            <p class="alert text-danger alert-danger"
+              *ngIf="checkform.get('email')?.errors['email']">Email should be
+              in email form </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row d-flex mt-3">
+        <div class="form-group col-md-11 ms-4">
+          <label for="otp">Otp Code</label>
+          <input type="text" class="form-control" id="otp"
+            formControlName="otp" required
+            placeholder="eg.3215">
+        </div>
+      </div>
+      <div
+      *ngIf="checkform.get('otp')?.errors &&checkform.get('otp')?.touched">
+
+      <p class="alert text-danger alert-danger"
+        *ngIf="checkform.get('otp')?.errors['required']">otp is
+        required </p>
+
+
+    </div>
+
+
+      <button type="submit"
+        class="btn btn-primary mt-4 ms-5 w-75 border border-style rounded-5" [disabled]="checkform.invalid">Submit</button>
+
+    </form>
+  </div>
+  <div class="child2">
+    <div class="opacity">
+      <div class="content">
+        <h1>Hello</h1>
+        <h5>We are only doing this for your privacy and keep your information
+          secure </h5>
+
+      </div>
+    </div>
+  </div>
+</div>

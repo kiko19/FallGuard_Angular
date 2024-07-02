@@ -1,0 +1,72 @@
+<div class="parent ">
+  <div class="child1" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="m-5">Login</h2>
+    <form [formGroup]="loginform" class="m-3 mt-3"
+      (ngSubmit)="loginUser(loginform)" data-aos="fade-up" data-aos-duration="1000">
+
+      <div class="form-row  mt-3">
+        <div class="form-group col-md-11 ms-4">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email"
+            formControlName="email" required
+            placeholder="Email">
+          <div
+            *ngIf="loginform.get('email')?.errors &&loginform.get('email')?.touched">
+
+            <p class="alert text-danger alert-danger"
+              *ngIf="loginform.get('email')?.errors['required']">email is
+              required </p>
+            <p class="alert text-danger alert-danger"
+              *ngIf="loginform.get('email')?.errors['email']">email should be
+              in email form </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row d-flex mt-3">
+        <div class="form-group col-md-11 ms-4">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password"
+            formControlName="password" required
+            placeholder="*********">
+          <div
+            *ngIf="loginform.get('password')?.errors &&loginform.get('password')?.touched">
+
+            <p class="alert text-danger alert-danger"
+              *ngIf="loginform.get('password')?.errors['required']">Password
+              is required </p>
+            <p class="alert text-danger alert-danger"
+              *ngIf="loginform.get('password')?.errors['pattern']">Password
+              should start with capital letter </p>
+            <p class="alert alert-danger  text-danger"
+              *ngIf="loginform.get('password')?.errors['minlength']">Password
+              length should be more
+              the 8 letters </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-check m-4">
+        <label class="form-check-label" for="exampleCheck1">Remember me </label>
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      </div>
+      <div class="alert alert-danger text-danger" *ngIf="errorMessage">
+        {{errorMessage}}
+      </div>
+      <button type="submit" class="btn btn-primary mt-2 ms-5 w-75 border border-style rounded-5" [disabled]="loginform.invalid">Submit</button>
+    <p class="text-dark m-5">Don't Have an account? <a routerLink="/register">Create your account</a></p>
+    </form>
+  </div>
+  <div class="child2" >
+    <div class="opacity">
+      <div class="content">
+        <h1>Welcome</h1>
+        <h5>Welcome to our website , We are here just to help you , feel free to
+          ask about anything </h5>
+
+      </div>
+    </div>
+  </div>
+</div>
