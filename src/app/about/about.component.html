@@ -1,5 +1,5 @@
 
-<section class="mt3">
+<section class="mt3"  *ngIf="isLoggedIn">
   <div class="parent ">
     <h1 data-aos="flip-left" data-aos-duration="2000">Who Are We</h1>
     <p class="pp" class="pb-5">We are Graduation Team we provide Special service
@@ -87,8 +87,9 @@
         <h2>Start using</h2>
         Start Using our Service
         <div data-aos="flip-left" data-aos-duration="1000">
-          <button class="btn btn-primary mt-2 bg-white text-primary" type>Start
-            Using</button>
+          <form method="get" action="http://127.0.0.1:5000/webcam">
+            <button class="btn btn-primary mt-2 bg-white text-primary" type>Start
+            Using</button></form>
         </div>
       </div>
     </div>

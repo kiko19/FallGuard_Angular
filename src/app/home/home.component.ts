@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  isLoggedIn: boolean | undefined;
+  constructor(private _AuthService:AuthService) {
+    this._AuthService.isLoggedIn.subscribe(status => {
+      this.isLoggedIn = status;
+    });
+   }
 
   ngOnInit(): void {
   }

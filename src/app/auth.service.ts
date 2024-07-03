@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -10,12 +11,14 @@ export class AuthService {
 
   loggedIn = new BehaviorSubject<boolean>(false);
   isLoggedIn = this.loggedIn.asObservable();
-  constructor(private _httpClient: HttpClient) { }
+  constructor(private _httpClient: HttpClient, private _router:Router) {
+    if (localStorage.getItem("token") != null) {
+      this.loggedIn.next(true);
+      this._router.navigate(['/home']);
 
+    }
 
-
-
-
+  }
 
   register(registerData: any): Observable<any> {
     return this._httpClient.post("https://fallyguardapi.me/api/v1/patients/register", registerData)

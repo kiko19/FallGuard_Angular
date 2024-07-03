@@ -32,12 +32,10 @@
     </ul>
   </div>
   <div class="btns d-flex justify-content-end">
-    <a routerLink="/chat" class="nav-link text-white">
-      <i class="fa-solid fa-message fa-lg m-2 me-3 icon-link-hover"></i>
-    </a>
+
     <li class="nav-item clearfix noticon dropdown w-100">
       <a class="nav-link dropdown-toggle" href="#" role="button"
-        data-bs-toggle="dropdown" aria-expanded="false">
+        data-bs-toggle="dropdown" aria-expanded="false" *ngIf="isLoggedIn">
         <i
           class="fa-solid fa-bell fa-lg mt-2 me-3"></i>
       </a>
