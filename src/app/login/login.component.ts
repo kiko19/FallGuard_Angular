@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
     password: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z]/), Validators.minLength(8)])
   })
   constructor(private _authService: AuthService, private _router: Router) {
-    this.token=localStorage.getItem("token")??"";
   }
 
 

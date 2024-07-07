@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+
 import * as AOS from 'aos';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +14,8 @@ export class AppComponent {
 
     AOS.init();
   }
+  constructor(private _authService: AuthService) {
+  }
+
+
 }
